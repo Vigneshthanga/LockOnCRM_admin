@@ -7,7 +7,7 @@ export WHEELHOUSE=$(cd $DIR/..; pwd)/wheels
 export PIP_FIND_LINKS=$WHEELHOUSE
 
 # Python packages that need to be built
-export PACKAGES="common"
+export PACKAGES="commom"
 
 # microservices in this application
 export SERVICES="sso"
