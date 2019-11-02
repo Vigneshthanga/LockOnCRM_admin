@@ -14,7 +14,7 @@ pushd $DIR
 # build wheels
 mkdir -p $WHEELHOUSE
 for PACKAGE in $PACKAGES; do
-    pushd ../LockOnCRM_$PACKAGE
+    pushd ../lockoncrm_$PACKAGE
     if [[ ! -f venv ]]; then
         python3 -m venv venv
         venv/bin/pip install --upgrade pip
@@ -27,7 +27,7 @@ done
 # build docker images
 for SVC in $SERVICES; do
     if [[ "$SERVICE" == "$SVC" ]] || [[ "$SERVICE" == "all" ]]; then
-        ../LockOnCRM_$SVC/build.sh
+        ../lockoncrm_$SVC/build.sh
     fi
 done
 

@@ -91,9 +91,9 @@ ID=$(docker run -d --restart always -P \
     $SOCKETIO \
     $DATABASE \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    -l app=LockOnCRM \
+    -l app=lockoncrm \
     -l service=$SERVICE \
     "$@" \
-    LockOnCRM_$SERVICE:$TAG)
+    lockoncrm_$SERVICE:$TAG)
 docker rename $ID ${SERVICE}_${ID:0:12}
 echo $ID

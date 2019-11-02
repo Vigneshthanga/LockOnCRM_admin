@@ -8,7 +8,7 @@ fi
 
 if [[ "$SERVICE" == "all" ]]; then
     echo Killing all services...
-    docker rm -f $(docker ps -q -f label=app=LockOnCRM)
+    docker rm -f $(docker ps -q -f label=app=lockoncrm)
 
     # cleanup the service registry as well
     for SERVICE in $SERVICES; do

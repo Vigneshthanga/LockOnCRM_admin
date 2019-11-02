@@ -10,11 +10,11 @@ pushd ~/
 export HOST_IP_ADDRESS=$(ip route get 1 | awk '{print $NF;exit}')
 export SECRET_KEY=$(pwgen -1 -c -n -s 32)
 export JWT_SECRET_KEY=$(pwgen -1 -c -n -s 32)
-export PATH=$PATH:$PWD/LockOnCRM_admin/bin
+export PATH=$PATH:$PWD/lockoncrm_admin/bin
 echo export HOST_IP_ADDRESS=$HOST_IP_ADDRESS >> ~/.profile
 echo export SECRET_KEY=$SECRET_KEY >> ~/.profile
 echo export JWT_SECRET_KEY=$JWT_SECRET_KEY >> ~/.profile
-echo export PATH=\$PATH:$PWD/LockOnCRM_admin/bin >> ~/.profile
+echo export PATH=\$PATH:$PWD/lockoncrm_admin/bin >> ~/.profile
 
 # logging
 #docker run --name logspout -d --restart always -p 1095:80 -v /var/run/docker.sock:/var/run/docker.sock gliderlabs/logspout:latest /var/log/syslog
@@ -52,8 +52,8 @@ else
 fi
 
 # download the code and build containers
-git clone $GITROOT/LockOnCRM_admin
-cd LockOnCRM_admin
+git clone $GITROOT/lockoncrm_admin
+cd lockoncrm_admin
 source mfvars
 install/make-db-passwords.sh
 echo "source $PWD/mfvars" >> ~/.profile
