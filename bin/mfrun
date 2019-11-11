@@ -68,13 +68,18 @@ if [[ "$SERVICE" == "sso" ]]; then
     SERVICE_URL="/login"
     SOCKETIO=""
 else
-    if [[ "$SERVICE" == "socketio" ]]; then
-        SERVICE_URL="/socket.io"
-        SOCKETIO="-e LB_ALGORITHM=source"
-    else
-        SERVICE_URL="/api/$SERVICE"
+    if [[ "$SERVICE" == "twitter" ]]; then
+        SERVICE_URL="/twitter"
         SOCKETIO=""
     fi
+fi
+
+if [[ "$SERVICE" == "socketio" ]]; then
+    SERVICE_URL="/socket.io"
+    SOCKETIO="-e LB_ALGORITHM=source"
+else
+    SERVICE_URL="/api/$SERVICE"
+    SOCKETIO=""
 fi
 
 ID=$(docker run -d --restart always -P \
