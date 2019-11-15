@@ -10,7 +10,7 @@ export PIP_FIND_LINKS=$WHEELHOUSE
 export PACKAGES="common"
 
 # microservices in this application
-export SERVICES="sso twitter"
+export SERVICES="sso"
 
 # services that use a database
 #export SERVICES_WITH_DB="sso"
