@@ -67,6 +67,7 @@ done
 if [[ "$SERVICE" == "sso" ]]; then
     SERVICE_URL="/login"
     SOCKETIO=""
+    echo "$SERVICE 1 vignesh vignesh 1"
 else
     if [[ "$SERVICE" == "socketio" ]]; then
         SERVICE_URL="/socket.io"
@@ -75,6 +76,7 @@ else
         if [["$SERVICE" == "twitter"]]; then
             SERVICE_URL="/twitter"
             SOCKETIO=""
+            echo "$SERVICE 2 vignesh vignesh 2"
         else
             SERVICE_URL="/api/$SERVICE"
             SOCKETIO=""
@@ -100,5 +102,6 @@ ID=$(docker run -d --restart always -P \
     -l service=$SERVICE \
     "$@" \
     lockoncrm_$SERVICE:$TAG)
+echo "${SERVICE}_${ID:0:12}"
 docker rename $ID ${SERVICE}_${ID:0:12}
 echo $ID
