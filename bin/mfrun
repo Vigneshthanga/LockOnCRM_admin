@@ -77,8 +77,8 @@ else
     fi
 fi
 
-if [[ "$SERVICE" == "sso" ]]; then
-    SERVICE_URL="/login"
+if [[ "$SERVICE" == "twitter" ]]; then
+    SERVICE_URL="/twitter"
     SOCKETIO=""
 else
     if [[ "$SERVICE" == "socketio" ]]; then
