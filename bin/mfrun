@@ -72,21 +72,13 @@ else
         SERVICE_URL="/socket.io"
         SOCKETIO="-e LB_ALGORITHM=source"
     else
-        SERVICE_URL="/api/$SERVICE"
-        SOCKETIO=""
-    fi
-fi
-
-if [[ "$SERVICE" == "twitter" ]]; then
-    SERVICE_URL="/twitter"
-    SOCKETIO=""
-else
-    if [[ "$SERVICE" == "socketio" ]]; then
-        SERVICE_URL="/socket.io"
-        SOCKETIO="-e LB_ALGORITHM=source"
-    else
-        SERVICE_URL="/api/$SERVICE"
-        SOCKETIO=""
+        if [["$SERVICE" == "twitter"]]; then
+            SERVICE_URL="/twitter"
+            SOCKETIO=""
+        else
+            SERVICE_URL="/api/$SERVICE"
+            SOCKETIO=""
+        fi
     fi
 fi
 
