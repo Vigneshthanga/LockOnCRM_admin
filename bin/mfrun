@@ -71,6 +71,7 @@ fi
 if [["$SERVICE" == "twitter"]]; then
     SERVICE_URL="/twitter"
     SOCKETIO=""
+fi
 
 ID=$(docker run -d --restart always -P \
     -e PYTHONUNBUFFERED=1 \
