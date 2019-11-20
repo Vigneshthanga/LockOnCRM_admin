@@ -64,14 +64,15 @@ EOF
     fi
 done
 
-if [[ "$SERVICE" == "sso" ]]; then
+if [["$SERVICE" == "sso"]]; then
     SERVICE_URL="/login"
     SOCKETIO=""
-else
-    if [["$SERVICE" == "twitter"]]; then
-        SERVICE_URL="/twitter"
-        SOCKETIO=""
-    fi
+    echo "1 vignesh vignesh"
+fi
+if [["$SERVICE" == "twitter"]]; then
+    SERVICE_URL="/twitter"
+    SOCKETIO=""
+    echo "2 vignesh vignesh"
 fi
 
 ID=$(docker run -d --restart always -P \
