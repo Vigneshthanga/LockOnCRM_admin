@@ -67,10 +67,11 @@ done
 if [[ "$SERVICE" == "sso" ]]; then
     SERVICE_URL="/login"
     SOCKETIO=""
-fi
-if [["$SERVICE" == "twitter"]]; then
-    SERVICE_URL="/twitter"
-    SOCKETIO=""
+else
+    if [["$SERVICE" == "twitter"]]; then
+        SERVICE_URL="/twitter"
+        SOCKETIO=""
+    fi
 fi
 
 ID=$(docker run -d --restart always -P \
