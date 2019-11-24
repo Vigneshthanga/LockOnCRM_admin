@@ -53,7 +53,7 @@ for SVC in $SERVICES_WITH_DB; do
         VAR=$(echo ${SERVICE}_DB_PASSWORD | tr '/a-z/' '/A-Z/')
         PASSWORD=$(eval echo \$$VAR)
         DATABASE="-e DATABASE_URL=mysql+pymysql://$SERVICE:$PASSWORD@$DATABASE_SERVER/$SERVICE"
-
+        echo "vignesh vignesh database creation "
         source ~/.mysql_root_password
         MYSQL_PWD="$MYSQL_ROOT_PASSWORD" mysql -u root --protocol tcp <<EOF
 CREATE DATABASE IF NOT EXISTS $SERVICE;
