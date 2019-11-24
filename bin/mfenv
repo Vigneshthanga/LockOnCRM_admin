@@ -17,5 +17,5 @@ for SERVICE in $SERVICES_WITH_DB; do
     PASSWORD=$(eval echo \$$VAR)
     echo ""
     echo "# uncomment to connect to the $SERVICE database"
-    echo "# DATABASE_URL=\"mysql+pymysql://$SERVICE:$PASSWORD@$LOCKONCRM_IP:3306/$SERVICE\""
+    echo "DATABASE_URL=\"mysql+pymysql://$SERVICE:$PASSWORD@$LOCKONCRM_IP:3306/$SERVICE\""
 done
