@@ -6,6 +6,7 @@
 # install system dependencies
 apt-get update -y
 apt-get install -y python3 python3-pip python3-venv build-essential pwgen mysql-client
+apt-get install -y postgresql libpq-dev postgresql-client postgresql-client-common
 pip3 install --upgrade pip wheel
 
 # install docker
