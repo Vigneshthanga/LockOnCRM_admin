@@ -76,6 +76,10 @@ elif [[ "$SERVICE" == "ticket" ]]; then
       SERVICE_URL="/ticket"
       SOCKETIO=""
       echo "3 vignesh vignesh"
+elif [[ "$SERVICE" == "invoice" ]]; then
+      SERVICE_URL="/invoice"
+      SOCKETIO=""
+      echo "4 vignesh vignesh"
 fi
 ID=$(docker run -d --restart always -P \
     -e PYTHONUNBUFFERED=1 \
