@@ -10,10 +10,10 @@ export PIP_FIND_LINKS=$WHEELHOUSE
 export PACKAGES="common"
 
 # microservices in this application
-export SERVICES="sso twitter ticket invoice"
+export SERVICES="sso twitter ticket invoice customers"
 
 # services that use a database
-export SERVICES_WITH_DB="ticket invoice"
+export SERVICES_WITH_DB="ticket invoice customers"
 
 # let Flask know where the app is
 export FLASK_APP=app.py
