@@ -11,7 +11,8 @@ source $PW_FILE
 for SERVICE in $SERVICES_WITH_DB; do
     VAR=$(echo ${SERVICE}_DB_PASSWORD | tr '/a-z/' '/A-Z/')
     if [[ "$(eval echo \$$VAR)" == "" ]]; then
-        PASSWORD=$(pwgen -1 -c -n -s 16)
+        #PASSWORD=$(pwgen -1 -c -n -s 16)
+	PASSWORD="commonsyspass"
         echo "${VAR}=$PASSWORD" >> $PW_FILE
     fi
 done
