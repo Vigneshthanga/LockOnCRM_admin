@@ -1,4 +1,6 @@
-MicroFlack's Administration Scripts
+Credits to Miguel Grinberg's Microservices using Flask.
+
+LockOnCRM's Administration Scripts
 ===================================
 
 This repository contains installation and administration scripts for MicroFlack.
